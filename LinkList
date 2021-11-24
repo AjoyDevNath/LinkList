@@ -2,7 +2,7 @@
 
 Data_Structure
 
-Link-list(singular link list)
+Link-list(single link list)
 
 */
 
@@ -44,3 +44,61 @@ int main()
 
     return 0;
 }
+
+
+
+
+/*
+Travsing single list
+*/
+
+//code part : 
+
+#include<bits/stdc++.h>
+using namespace std;
+
+struct node
+{
+    int data;
+    struct node* link;
+};
+
+void count_of_node(struct node* head)
+{
+    int count = 0;
+
+    if(head == NULL)
+    {
+        cout<<"Linklist is empty!"<<"\n";
+    }
+
+    struct node *ptr = NULL;
+    ptr = head;
+
+    while(ptr != NULL)
+    {
+        count++;
+        cout<<ptr->data<<" ";
+        ptr = ptr -> link;
+    }
+    cout<<"\n"<<"Total number of node : "<<count<<endl;
+}
+
+int main()
+{
+    struct node* head = NULL;
+
+    head = (struct node*)malloc(sizeof(struct node));
+    head -> data = 45;
+    head -> link = (struct node*)malloc(sizeof(struct node));
+
+    head -> link -> data = 98;
+    head -> link -> link = (struct node*)malloc(sizeof(struct node));
+
+    head -> link -> link -> data = 3;
+    head -> link -> link -> link = NULL;
+
+    count_of_node(head);
+}
+
+
