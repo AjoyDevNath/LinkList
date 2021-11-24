@@ -102,3 +102,68 @@ int main()
 }
 
 
+
+/* Added Node the single link list 
+ Data structure : 
+*/
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+struct Node
+{
+    int data;
+    struct Node* link;
+};
+
+
+void traverseLinkList(struct Node* head)
+{
+    int count_node = 0;
+
+    if(head == NULL)
+    {
+        cout<<"Node : LinkList is empty"<<"\n";
+    }
+
+    struct Node* ptr = NULL;
+    ptr = head;
+
+    while(ptr != NULL)
+    {
+        count_node++;
+        cout<<ptr -> data<<" ";
+        ptr = ptr -> link;
+    }
+    cout<<"\n"<<"Node is : "<<count_node<<endl;
+}
+
+
+int main()
+{
+    struct Node* head = NULL;
+
+    head = (struct Node*)malloc(sizeof(struct Node));
+    head -> data = 45;
+    head -> link = (struct Node*)malloc(sizeof(struct Node));
+    head -> link -> data = 98;
+    head -> link -> link = (struct Node*)malloc(sizeof(struct Node));
+    head -> link -> link -> data = 3;
+    head -> link -> link -> link = NULL;
+
+    struct Node* temp = NULL;
+    temp = (struct Node*)malloc(sizeof(struct Node));
+    temp -> data = 67;
+    temp -> link = NULL;
+
+
+    head -> link -> link -> link = temp ;
+
+    traverseLinkList(head);
+
+    return 0;
+}
+
+
