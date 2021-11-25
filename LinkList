@@ -230,3 +230,55 @@ int main()
     add_at_the_end(ptr,67);
 }
 
+
+
+
+
+
+
+
+/* Link List */
+
+#include<bits/stdc++.h>
+typedef struct node Node;
+using namespace std;
+
+struct node
+{
+    int data;
+    Node* link;
+};
+
+
+Node* add_at_the_end(Node* ptr,int data)
+{
+    Node *temp;
+
+    temp = (Node*)malloc(sizeof(Node));
+
+    temp -> data = data;
+    temp -> link = NULL;
+
+    ptr -> link = temp;
+
+    return temp;
+}
+
+
+int main()
+{
+    Node* head = NULL;
+
+    head = (Node*)malloc(sizeof(Node));
+    head -> data = 45;
+    head -> link = NULL;
+
+    Node *ptr = head;
+
+    ptr = add_at_the_end(ptr,98);//102
+    ptr = add_at_the_end(ptr,3);//
+    ptr = add_at_the_end(ptr,67);//
+}
+
+
+
