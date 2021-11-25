@@ -239,6 +239,7 @@ int main()
 
 /* Link List */
 
+
 #include<bits/stdc++.h>
 typedef struct node Node;
 using namespace std;
@@ -278,7 +279,25 @@ int main()
     ptr = add_at_the_end(ptr,98);//102
     ptr = add_at_the_end(ptr,3);//
     ptr = add_at_the_end(ptr,67);//
+
+    int countNode = 0;
+
+    ptr = head;
+
+    cout<<"Node  : ";
+
+    while(ptr != NULL)
+    {
+        countNode++;
+        cout<<ptr->data<<" ";
+        ptr = ptr -> link;
+    }
+    cout<<"\n";
+    cout<<"Total Node: "<<countNode<<endl;
+
+    return 0;
 }
+
 
 
 
