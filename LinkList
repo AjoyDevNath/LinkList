@@ -301,3 +301,57 @@ int main()
 
 
 
+
+
+
+//Added Node in front in link list
+
+#include<bits/stdc++.h>
+typedef struct Node NODE;
+using namespace std;
+
+struct Node
+{
+    int data;
+    NODE* link;
+};
+
+NODE* add_beg(NODE* head,int d)
+{
+    NODE* ptr = (NODE*)malloc(sizeof(NODE));
+    ptr -> data = d;
+    ptr -> link = head;
+
+    head = ptr;
+    return head;
+}
+
+int main()
+{
+    NODE *head = NULL;
+
+    head = (NODE*)malloc(sizeof(NODE));
+    head -> data = 45;
+    head -> link = NULL;
+
+    NODE *ptr = NULL;
+
+    ptr = (NODE*)malloc(sizeof(NODE));
+    ptr -> data = 98;
+    ptr -> link = NULL;
+
+    head -> link = ptr;
+
+    int data = 3;
+
+    head = add_beg(head,data);
+    ptr = head;
+
+    while(ptr != NULL )
+    {
+        cout<<ptr -> data<<" ";
+        ptr = ptr -> link;
+    }
+
+    return 0;
+}
